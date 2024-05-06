@@ -48,21 +48,21 @@ for i=1:nb
     
 end
 
-%% final ode45 
+%% final ode45
 
 [dt,dU] = ode45(@(t,u) rhs(t,u), tspan, init, options); %same
 
 t = [t;dt];
 U = [U;dU];
 
-%plot(x,y,'o');
-%hold on;
-%plot(U(:,1),U(:,2),'-b',b(:,1),b(:,2),'or');
+plot(x,y,'o');
+hold on;
+plot(U(:,1),U(:,2),'-b',b(:,1),b(:,2),'or');
 %plot(U(:,1),U(:,2),'-b');
-%axis equal;
+axis equal;
 
 
-final = U(end,:);
+final = U(:,1:2);
 
 end
 

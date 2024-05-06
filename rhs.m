@@ -5,14 +5,18 @@ y  = u(2);
 dx = u(3);
 dy = u(4);
 
-two_fixed_planets;
+%% mu calculations
+G = 6.6743e-11; % m3kg-1s-2
+M = 5.972e24; %kg
+Gmin = G/(60^2 * 1000^3); %km3kg-1min-2
+mu = Gmin*M; % km3min-2
+%mu = 110.719
 
-r1 = sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
-r2 = sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));
+r = sqrt(x*x + y*y);
 
-ddx = - mu1 / r1^3 * (x-x1) - mu2 / r2^3 * (x-x2);
-ddy = - mu1 / r1^3 * (y-y1) - mu2 / r2^3 * (y-y2);
+ddx = - mu / r^3 * x;
+ddy = - mu / r^3 * y;
 
-du = [dx;dy;ddx;ddy];
+du = [dx;dy;ddx;ddy]; %4 
 
 end
