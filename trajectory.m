@@ -39,7 +39,7 @@ for i=1:nb
     v=init(3:4);
     init(3:4)=v+v/norm(v)*mb(i);
     
-    t = [t;dt];
+    %t = [t;dt];
     U = [U;dU];
     
 end
@@ -48,11 +48,13 @@ end
 
 [dt,dU] = ode45(@(t,u) rhs(t,u), tspan, init, options); %same
 
-t = [t;dt]
+%t = [t;dt]
 U = [U;dU]
 
-plot(U(:,1),U(:,2),'-b',b(:,1),b(:,2),'or');
-axis equal;
+%plot(x,y,'o');
+%hold on;
+%plot(U(:,1),U(:,2),'-b',b(:,1),b(:,2),'or');
+%axis equal;
 
 %plot(t,U(:,2));
 

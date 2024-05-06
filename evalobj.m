@@ -7,8 +7,8 @@ mb = var(nb+2:end);      % magnitude of the boosts
 
 final = trajectory(var);
 
-p = [final(1:2),0]; %semi latus rectum
-v = [final(5:6),0]; %speed of satellite
+p = [final(1:2),0]; %semi latus rectum %position vector 
+v = [final(3:4),0]; %speed of satellite
 
 % orbit at higher altitude
 
